@@ -1,6 +1,60 @@
-# Code Challenge: Name
+# Code Challenge: Crud
 
-descripcion
+El objetivo del challenge es implementar un crud básico, utilizando un array para almacenar los elementos.
+
+Se debe implementar
+
+## create
+Agrega un elemento a la lista y lo retorna con su ID
+ 
+### Parametros
+Un objeto con las propiedades name y lastname  
+1- Objeto: {name, lastname} (ej: { name:'John', lastname: 'Rambo' })
+
+### Retorna
+Un objeto que incluye las propiedades id, name y lastname
+- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo' })
+
+---
+
+## read
+Busca un elemento por su ID y lo retorna
+ 
+### Parametros
+Un ID numerico
+1 - id {type: Number}  (ej: 2)
+
+### Retorna
+Un objeto que incluye las propiedades id, name y lastname
+- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo'})
+
+---
+
+## update
+Busca un elemento por su ID, lo actualiza y lo retorna
+ 
+### Parametros
+Un ID numerico
+1 - id {type: Number}  (ej: 2)
+- Objecto {name, lastname} (ej: { name:'John', lastname: 'Rambo' })
+
+### Retorna
+Un objeto que incluye las propiedades id, name y lastname
+- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo' })
+
+---
+ 
+## delete
+Busca un elemento por su ID y lo remueve
+ 
+### Parametros
+Un ID numerico
+1 - id {type: Number}  (ej: 2)
+
+### Retorna
+- Retorna true si encontró el elemento y lo elimino con exito
+- Retorna false si no logro encontrar un element con el ID proporcionado
+
 
 ## Instrucciones
 - Crear un nuevo repositorio utilizando este repositorio como template (Boton: use this template).
@@ -18,33 +72,4 @@ Ejecutar test
 ```
 npm run test
 ```
-## Entrada
 
-##### Parámetro 1
-- **nombre**: num
-- **tipo**: Number (Integer)
-- **limitaciones**: 0 < **num** <= 10
-
-## Salida
-
-- **tipo**: Number (Integer)
-
-## Ejemplo
-**1** debe retornar **1** porque: 1 == 1
-
-## Tests
-
-### Test 1  
-
-- **Parametros**: param = 1  
-- **Resultado esperado**: xxx
----
-### Test 2  
-
-- **Parametros**:  param = 2  
-- **Resultado esperado**: xxx
----
-### Test 3  
-
-- **Parametros**: param = 3  
-- **Resultado esperado**: xxx

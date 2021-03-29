@@ -1,37 +1,59 @@
-const challengeFunction = require('./index.js')
+const crud = require('./index.js')
 const assert = require('assert')
 
-describe('ChallengeTemplate', () => {
+describe('Crud', () => {
 
     /**
      * TEST DESCRIPTION
      */
-    it('Test1', () => {
+    it('Read', () => {
 
-        let result = challengeFunction(1)
-        let expected = 1
+        let item = crud.read(1)
+        let expected = {id: 1, name: "John Doe"}
 
-        assert.strictEqual(result,expected)
+        assert.strictEqual(item.id, expected.id)
+        assert.strictEqual(item.name, expected.name)
     })
 
     /**
      * TEST DESCRIPTION
      */
-    it('Test2', () => {
-        let result = challengeFunction(2)
-        let expected = 2
+    it('create', () => {
+        let item = crud.create({name: "John", lastname: "Rambo"})
+        let expected = {id: 3, name: "John", lastname: "Rambo"}
 
-        assert.strictEqual(result,expected)
+        assert.strictEqual(item.id, expected.id)
+        assert.strictEqual(item.name, expected.name)
+        assert.strictEqual(item.lastname, expected.lastname)
     })
 
     /**
      * TEST DESCRIPTION
      */
-    it('Test3', () => {
-        let result = challengeFunction(3)
-        let expected = 3
+    it('update', () => {
+        let item = crud.update(2, {name: "John", lastname: "Wick"})
+        let expected = {id: 2, name: "John", lastname: "Wick"}
 
-        assert.strictEqual(result,expected)
+        assert.strictEqual(item.id, expected.id)
+        assert.strictEqual(item.name, expected.name)
+        assert.strictEqual(item.lastname, expected.lastname)
     })
 
+    /**
+     * TEST DESCRIPTION
+     */
+    it('delete ok', () => {
+        let result = crud.delete(2)
+
+        assert.strictEqual(result, true)
+    })
+
+    /**
+     * TEST DESCRIPTION
+     */
+    it('delete fail', () => {
+        let result = crud.delete(56)
+
+        assert.strictEqual(result, false)
+    })
 })

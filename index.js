@@ -1,8 +1,29 @@
-const challengeFunction = function(param){
-    /* YOUR CODE HERE */
-    let result
+const crud = function () {
 
-    return result
+    let items = [
+        {id: 1, name: "John", lastname: "Doe"},
+        {id: 2, name: "Jane", lastname: "Doe"},
+    ]
+
+    return {
+        create: ({name, lastname}) => {
+            /*YOUR CODE HERE */
+
+        },
+        read: (id) => {
+            /*YOUR CODE HERE */
+
+        },
+        update: (id, {name, lastname}) => {
+            /*YOUR CODE HERE */
+
+        },
+        delete: (id) => {
+            /*YOUR CODE HERE */
+
+        }
+    }
+
 }
 
-module.exports = challengeFunction
+module.exports = crud()
