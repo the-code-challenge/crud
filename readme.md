@@ -5,7 +5,7 @@ El objetivo del challenge es implementar un crud básico, utilizando un array pa
 Se debe implementar
 
 ## create
-Agrega un elemento a la lista y lo retorna con su ID
+Agrega un elemento a la lista asignando un **id** y lo retorna con su **id**
  
 ### Parametros
 Un objeto con las propiedades name y lastname  
@@ -18,7 +18,7 @@ Un objeto que incluye las propiedades id, name y lastname
 ---
 
 ## read
-Busca un elemento por su ID y lo retorna
+Busca un elemento por su **id** y lo retorna. Si el **id** no existe retorna **null**
  
 ### Parametros
 Un ID numerico

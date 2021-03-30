@@ -9,10 +9,11 @@ describe('Crud', () => {
     it('Read', () => {
 
         let item = crud.read(1)
-        let expected = {id: 1, name: "John Doe"}
+        let expected = {id: 1, name: "John", lastname: "Doe"}
 
         assert.strictEqual(item.id, expected.id)
         assert.strictEqual(item.name, expected.name)
+        assert.strictEqual(item.lastname, expected.lastname)
     })
 
     /**
@@ -44,8 +45,10 @@ describe('Crud', () => {
      */
     it('delete ok', () => {
         let result = crud.delete(2)
-
         assert.strictEqual(result, true)
+
+        let result2 = crud.read(2)
+        assert.strictEqual(result2, null)
     })
 
     /**
