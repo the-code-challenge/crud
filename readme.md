@@ -5,15 +5,18 @@ El objetivo del challenge es implementar un crud básico, utilizando un array pa
 Se debe implementar
 
 ## create
-Agrega un elemento a la lista asignando un **id** y lo retorna con su **id**
+Crea y agrega un nuevo objeto a la lista asignando un **id** auto-incremental y retorna el objeto creado incluyendo su **id**
  
 ### Parametros
-Un objeto con las propiedades name y lastname  
-1- Objeto: {name, lastname} (ej: { name:'John', lastname: 'Rambo' })
+1- name: String  
+2- lastname: String  
+Ejemplo: create('John', 'Rambo')
 
 ### Retorna
-Un objeto que incluye las propiedades id, name y lastname
-- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo' })
+Retorna un objeto que incluye las propiedades id, name y lastname
+- Objecto {id: Number, name: String, lastname: String}  
+
+Ejemplo: { id: 3, name:'John', lastname: 'Rambo' }
 
 ---
 
@@ -21,39 +24,48 @@ Un objeto que incluye las propiedades id, name y lastname
 Busca un elemento por su **id** y lo retorna. Si el **id** no existe retorna **null**
  
 ### Parametros
-Un ID numerico
-1 - id {type: Number}  (ej: 2)
+1 - id: Number  
+Ejemplo: read(2)
 
 ### Retorna
-Un objeto que incluye las propiedades id, name y lastname
-- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo'})
+Si el id existe, retorna un objeto que incluye las propiedades id, name y lastname.  
+Si el id no existe retorna null
+
+- Objecto {id: Number, name: String, lastname: String}  || null
+
+Ejemplo id existe: { id: 3, name:'John', lastname: 'Rambo'}
+Ejemplo id no existe: null
 
 ---
 
 ## update
-Busca un elemento por su ID, lo actualiza y lo retorna
+Busca un elemento por su ID, lo actualiza y lo retorna. Si el elemento no existe, retorna false.
  
 ### Parametros
-Un ID numerico
-1 - id {type: Number}  (ej: 2)
-- Objecto {name, lastname} (ej: { name:'John', lastname: 'Rambo' })
+1- id: Number
+2- name: String  
+3- lastname: String  
+Ejemplo: update( 2, 'John', 'Wick')
 
 ### Retorna
-Un objeto que incluye las propiedades id, name y lastname
-- Objecto {id, name, lastname} (ej: { id: 3, name:'John', lastname: 'Rambo' })
+- Si el id existe, retorna un objeto que incluye las propiedades actualizadas id, name y lastname. 
+- Si el id no existe retorna false
+- Objecto {id: Number, name: String, lastname: String} 
 
+Ejemplo id existe: { id: 3, name:'John', lastname: 'Rambo' }
+Ejemplo id no existe: false
 ---
  
 ## delete
-Busca un elemento por su ID y lo remueve
+Busca un elemento por su ID y lo remueve, luego retorna true. Si el elemento no existe retorna false.
  
 ### Parametros
-Un ID numerico
-1 - id {type: Number}  (ej: 2)
+1 - id: Number  
+Ejemplo: delete(2)
 
 ### Retorna
-- Retorna true si encontró el elemento y lo elimino con exito
-- Retorna false si no logro encontrar un element con el ID proporcionado
+- Retorna **true** si encontró el elemento y lo elimino con exito
+- Retorna **false** si no logro encontrar un element con el ID proporcionado
 
 
 ## Instrucciones

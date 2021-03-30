@@ -8,7 +8,7 @@ const crud = function () {
     let autoincrement = 3
 
     return {
-        create: ({name, lastname}) => {
+        create: (name, lastname) => {
             /*YOUR CODE HERE */
 
         },
