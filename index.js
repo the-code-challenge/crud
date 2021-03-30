@@ -5,6 +5,8 @@ const crud = function () {
         {id: 2, name: "Jane", lastname: "Doe"},
     ]
 
+    let autoincrement = 3
+
     return {
         create: ({name, lastname}) => {
             /*YOUR CODE HERE */
