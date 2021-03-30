@@ -22,7 +22,7 @@ describe('Crud', () => {
     })
 
     it('create should return an object with autoincremental id', () => {
-        let item = crud.create({name: "John", lastname: "Rambo"})
+        let item = crud.create("John", "Rambo")
         let expected = {id: 3, name: "John", lastname: "Rambo"}
 
         assert.strictEqual(item.id, expected.id)
@@ -32,16 +32,21 @@ describe('Crud', () => {
 
 
     it('update with valid id should return an updated object', () => {
-        let item = crud.update(2, {name: "John", lastname: "Wick"})
+        let item = crud.update(2, "John", "Wick")
         let expected = {id: 2, name: "John", lastname: "Wick"}
 
+        assert.strictEqual(item.id, expected.id)
+        assert.strictEqual(item.name, expected.name)
+        assert.strictEqual(item.lastname, expected.lastname)
+
+        item = crud.read(2)
         assert.strictEqual(item.id, expected.id)
         assert.strictEqual(item.name, expected.name)
         assert.strictEqual(item.lastname, expected.lastname)
     })
 
     it('update with invalid id should return false', () => {
-        let item = crud.update(789, {name: "John", lastname: "Wick"})
+        let item = crud.update(789,  "John",  "Wick")
         assert.strictEqual(item, false)
     })
 

@@ -16,7 +16,7 @@ const crud = function () {
             /*YOUR CODE HERE */
 
         },
-        update: (id, {name, lastname}) => {
+        update: (id, name, lastname) => {
             /*YOUR CODE HERE */
 
         },
